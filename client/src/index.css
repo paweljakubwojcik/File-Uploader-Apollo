@@ -1,0 +1,136 @@
+:root {
+  --primary-color: #ef7b45;
+  --secondary-color: #d84727;
+  --background--color: #010d0e;
+  --element-color: #363636;
+  --secondary-element-color: #cdedf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background--color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.uploadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadForm__inputContainer {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.4s;
+  border: 3px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.uploadForm__label {
+}
+
+.uploadForm__input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.uploadForm__inputContainer.small {
+  height: 40px;
+}
+
+.uploadForm__button {
+  color: inherit;
+  margin: 1em;
+  padding: 0.5em 1em;
+  background: transparent;
+  border: none;
+  border: solid 3px white;
+  transition: background-color 0.3s;
+}
+
+.uploadForm__button:hover,
+.uploadForm__button:focus {
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+.imageList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  max-width: 600px;
+}
+.imageList__element {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+  animation: showUp 0.5s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.imageList__image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--element-color);
+  padding: 10px;
+}
+
+.loader__progressBar {
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+@keyframes showUp {
+  from {
+    transform: scale(0.2);
+  }
+}
